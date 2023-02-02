@@ -1,8 +1,10 @@
 function SavedMovies() {
   return (
     <div>
-      <MoviesCardList />
-      <MoviesCard />
+      {/* <MoviesCardList /> */}
+      {/* <MoviesCard /> */}
     </div>
   )
 }
+
+export default SavedMovies;

@@ -1,4 +1,10 @@
-@import url('normalize');
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts/fonts.css');
+
+@import url('./components/header/header.css');
+@import url('./components/navigation/Navigation.css');
+
+@import url('./components/app/App.css');
 
 /* компонент Main со всеми дочерними */
-@import url(./components/main/Main.css);
+@import url('./components/main/Main.css');

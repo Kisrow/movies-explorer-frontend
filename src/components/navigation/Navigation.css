@@ -1,0 +1,27 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-left: 426px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.navigation_hidden {
+  opacity: 0;
+}
+
+.navigation__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.navigation__list-item {
+  text-decoration: none;
+  color: rgba(255,255,255,1);
+  margin-right: 16px;
+}
