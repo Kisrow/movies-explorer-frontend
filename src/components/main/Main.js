@@ -1,8 +1,9 @@
+import Promo from '../promo/Promo'
+
 function Main() {
   return (
-    <div>
-    {/* //     <Promo /> */}
-    {/* //     <NavTab /> */}
+    <div className="main">
+      <Promo />
     {/* //     <AboutProject /> */}
     {/* //     <Techs /> */}
     {/* //     <AboutMe /> */}

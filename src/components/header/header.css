@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  margin: 0 70px;
+  padding: 18px 70px;
 }
 
 .header__button-list {
@@ -20,6 +20,7 @@
   color: rgba(255, 255, 255, 1);
   font-size: 12px;
   font-weight: 500;
+  line-height: 16px;
 }
 .header__button_type_login {
   margin-left: 30px;
