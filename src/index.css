@@ -3,10 +3,18 @@
 
 @import url('./components/app/App.css');
 
+/* Header with navigation */
 @import url('./components/header/header.css');
 @import url('./components/navigation/Navigation.css');
 
-/* компонент Main со всеми дочерними */
+/* Main with chaild */
 @import url('./components/main/Main.css');
 @import url('./components/promo/Promo.css');
 @import url('./components/navtab/NavTab.css');
+@import url('./components/about-project/AboutProject.css');
+@import url('./components/techs/Techs.css');
+@import url('./components/about-me/AboutMe.css');
+@import url('./components/portfolio/Portfolio.css');
+
+/* Footer */
+@import url('./components/footer/Footer.css');

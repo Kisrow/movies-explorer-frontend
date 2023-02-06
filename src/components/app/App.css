@@ -1,11 +1,11 @@
 .root {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(32, 32, 32, 1);
 }
 
 .app {
   max-width: 1280px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
-  background-color: rgba(0, 0, 0, 1);
   color:rgba(255, 255, 255, 1);
+  background-color: rgba(32, 32, 32, 1);
 }

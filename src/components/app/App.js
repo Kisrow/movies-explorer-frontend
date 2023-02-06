@@ -1,7 +1,8 @@
-import Header from '../header/header'
+import Header from '../header/header';
 import Main from '../main/Main';
 import Movie from '../movies/Movies';
 import SavedMovies from '../saved-movies/SavedMovies';
+import Footer from '../footer/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Main />
         <Movie />
         <SavedMovies />
+        <Footer />
       </div>
     </div>
   );
