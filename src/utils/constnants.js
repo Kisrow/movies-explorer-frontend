@@ -1,4 +1,20 @@
 module.exports = {
+
+  NAVTAB_ITEMS:[
+    {
+      name: 'О проекте',
+      link: '#',
+    },
+    {
+      name: 'Технологии',
+      link: '#',
+    },
+    {
+      name: 'Студент',
+      link: '#',
+    },
+  ],
+
   // применяемые технологии
   APPLIED_TECHNOLOGIES: 
   [
@@ -12,7 +28,7 @@ module.exports = {
   ],
 
   // наименования проектов и ссылки портфолио
-  PORTFOLIO_ITEM: [
+  PORTFOLIO_ITEMS: [
     {
       projectName: 'Статичный сайт',
       projectLink: 'https://github.com/Kisrow',

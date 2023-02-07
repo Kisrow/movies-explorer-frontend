@@ -9,7 +9,7 @@
 }
 
 .navigation_hidden {
-  opacity: 0;
+  display: none;
 }
 
 .navigation__list {

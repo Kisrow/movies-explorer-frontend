@@ -16,10 +16,19 @@
 }
 
 .navtab__list-item {
+  width: 96px;
+  padding: 10px 0;
+  border-radius: 10px;
+  margin-right: 10px;
+  background-color: rgba(48, 48, 48, 1);
+  text-align: center;
+}
+
+.navtab__list-item:last-child {
+  margin: 0;
+}
+
+.navtab__list-link {
   color: rgba(255,255,255,1);
   text-decoration: none;
-  margin-right: 10px;
-  padding: 10px 17px;
-  background-color: rgba(48, 48, 48, 1);
-  border-radius: 10px;
 }

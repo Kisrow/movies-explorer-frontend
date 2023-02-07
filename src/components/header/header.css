@@ -33,3 +33,9 @@
   box-sizing: border-box;
   border-radius: 3px;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 18px 30px;
+  }
+}

@@ -69,3 +69,39 @@
 .techs__list-item:last-child {
   margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+  .techs {
+    padding: 90px 50px;
+  }
+
+  .techs__title {
+    padding-bottom: 22px;
+  }
+
+  .techs__text-title {
+    margin-top: 80px;
+  }
+  
+  .techs__text-container {
+    margin: 22px auto 83px;
+  }
+  
+  .techs__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .techs__list {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .techs__list-item {
+    width: 84px;
+  }
+  
+  .techs__list-item:last-child {
+    margin: 0;
+  }
+}

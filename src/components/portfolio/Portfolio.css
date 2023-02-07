@@ -36,6 +36,8 @@
 
 .portfolio__list-item:last-child {
   margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .portfolio__list-text {
@@ -45,4 +47,14 @@
 
 .portfolio__list-link {
   display: contents;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio {
+    padding: 90px 0;
+  }
+  
+  .portfolio__list {
+    font-size: 28px;
+  }
 }

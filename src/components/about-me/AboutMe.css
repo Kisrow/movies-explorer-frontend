@@ -18,9 +18,6 @@
 .about-me__content-container {
   display: flex;
   justify-content: space-between;
-}
-
-.about-me__content-container {
   margin: 66px 0 0;
 }
 
@@ -68,4 +65,49 @@
 .about-me__content-image {
   border-radius: 10px;
   max-width: 270px;
+}
+
+@media screen and (max-width: 768px) {
+  .about-me {
+    padding: 90px 50px 0;
+  }
+  
+  .about-me__title {
+    padding-bottom: 22px;
+  }
+  
+  .about-me__content-text {
+    max-width: 364px;
+  }
+  
+  .about-me__content-name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  
+  .about-me__content-job {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 16px 0 0;
+  }
+  
+  .about-me__content-description {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 20px 0 87px;
+  }
+  
+  .about-me__content-link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+  }
+  
+  .about-me__content-image {
+    border-radius: 10px;
+    max-width: 255px;
+  }
 }
