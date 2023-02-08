@@ -4,9 +4,7 @@ import Navigation from '../navigation/Navigation'
 function Header() {
   return (
     <div className="header">
-      <div className="header__logo"> 
-        <img src={logo} alt="logo" />
-      </div>
+      <img src={logo} alt="logo" className="header__logo" />
       <Navigation />
       <ul className="header__button-list">
         <li><button aria-label="открыть окно регистрации" className="header__button" type="button">Регистрация</button></li>

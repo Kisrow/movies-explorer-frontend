@@ -1,5 +1,5 @@
 import Portfolio from '../portfolio/Portfolio'
-import photo from '../../images/photo.png';
+import photo from '../../images/photo.jpg';
 import test from '../../images/test.png';
  
 function AboutMe() {
@@ -19,7 +19,7 @@ function AboutMe() {
             </p>
             <a href="https://github.com/Kisrow" target="_ blank" className="about-me__content-link">Github</a>
           </div>
-          {/* <img src={photo} alt="Мое фото" className="about-me__content-image"/> */}
+          <img src={photo} alt="Мое фото" className="about-me__content-image"/>
           {/* <img src={test} alt="Мое фото" className="about-me__content-image"/> */}
         </div>
       </div>

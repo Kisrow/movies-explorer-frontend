@@ -1,12 +1,12 @@
 .promo {
   margin: 20px 40px 0;
   background-color: rgba(39, 39, 39, 1);
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 .promo__text-container {
   max-width: 730px;
-  margin: 0 auto 161px;
+  margin: 0 auto 151px;
   padding: 160px 0 0;
 }
 
@@ -36,5 +36,23 @@
   .promo__text {
     font-size: 40px;
     line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .promo {
+    margin: 14px 14px 0;
+    padding-bottom: 17px;
+  }
+
+  .promo__text-container {
+    max-width: 292px;
+    margin: 0 auto 212px;
+    padding: 220px 0 0;
+  }
+
+  .promo__text {
+    font-size: 29px;
+    line-height: 37px;
   }
 }

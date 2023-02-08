@@ -6,7 +6,8 @@ function Portfolio() {
     <li className="portfolio__list-item" key={index}>
       <p className="portfolio__list-text">{item.projectName}</p>
       <a href={item.projectLink} target="_blank" rel="noreferrer" className="portfolio__list-link">
-        <img src={linkArrow} alt="ссылка на внешний источник" />
+        {/* <img src={linkArrow} alt="ссылка на внешний источник" /> */}
+        &#8599;
       </a>
     </li>
   );
