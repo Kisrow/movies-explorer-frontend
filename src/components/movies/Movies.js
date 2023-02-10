@@ -1,10 +1,11 @@
+import SearchForm from '../search-form/SearchForm';
+import MoviesCardList from '../movies-card-list/MoviesCardList';
+
 function Movies() {
   return (
-    <div>
-      {/* <SearchForm /> */}
-      {/* <Preloader /> */}
-      {/* <MoviesCardList /> */}
-      {/* <MoviesCard /> */}
+    <div className="movies">
+      <SearchForm />
+      <MoviesCardList />
     </div>
       
   )

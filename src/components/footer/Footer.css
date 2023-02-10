@@ -2,6 +2,10 @@
   padding: 70px 70px 0;
 }
 
+.footer_hidden {
+  display: none;
+}
+
 .footer__text {
   margin: 0;
   padding: 0;
@@ -76,7 +80,7 @@
   }
 
   .footer__container-text {
-    font-size: 1px;
+    font-size: 12px;
     line-height: 15px;
     color: rgba(139, 139, 139, 1);
     margin-top: 30px;

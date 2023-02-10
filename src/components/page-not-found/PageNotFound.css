@@ -1,0 +1,29 @@
+.page-not-found {
+  text-align: center;
+  max-width: 400px;
+  margin: 169px auto 285px;
+}
+
+.page-not-found__error-code {
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 169px;
+  margin: 0;
+  padding: 0;
+}
+
+.page-not-found__error-name {
+  padding: 0;
+  margin: 5px auto 184px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.page-not-found__link-back {
+  color: rgba(66, 133, 244, 1);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
