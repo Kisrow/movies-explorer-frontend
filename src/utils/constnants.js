@@ -3,15 +3,15 @@ module.exports = {
   NAVTAB_ITEMS:[
     {
       name: 'О проекте',
-      link: '#',
+      link: '#about-project__title',
     },
     {
       name: 'Технологии',
-      link: '#',
+      link: '#techs__title',
     },
     {
       name: 'Студент',
-      link: '#',
+      link: '#about-me__title',
     },
   ],
 

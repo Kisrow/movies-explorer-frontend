@@ -5,7 +5,7 @@ function Login() {
     <PageWithForm
       title = "Рады видеть!"
       submitFormDescription = "Войти"
-      linkLegend = "Ещё не зарегистрированы? "
+      linkLegend = "Ещё не зарегистрированы?"
       linkText = "Регистрация"
       linkUrl = "/register"
       test = "true" //! будет удалено после проверки

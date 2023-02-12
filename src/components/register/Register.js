@@ -5,7 +5,7 @@ function Register() {
     <PageWithForm
       title = "Добро пожаловать!"
       submitFormDescription = "Зарегистрироваться"
-      linkLegend = "Уже зарегистрированы? "
+      linkLegend = "Уже зарегистрированы?"
       linkText = "Войти"
       linkUrl = "/login"
     >

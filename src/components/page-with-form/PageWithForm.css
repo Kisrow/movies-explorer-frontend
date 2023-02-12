@@ -99,3 +99,58 @@
   margin-left: 6px;
   color: rgba(66, 133, 244, 1);
 }
+
+@media screen and (max-width: 768px) {
+  .page-with-form {
+    margin-top: 40px;
+    padding-bottom: 232px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-with-form__form {
+    max-width: 396px;
+  }
+
+  .page-with-form__form-input-error {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page-with-form {
+    margin-top: 50px;
+  }
+
+  .page-with-form__form {
+    max-width: 260px;
+  }
+
+  .page-with-form__form-title {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .page-with-form__form-input-error {
+    margin-bottom: 5px;
+  }
+
+  .page-with-form__form-submit {
+    margin-top: 218px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .page-with-form__link-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 14px;
+  }
+  
+  .page-with-form__link {
+    margin-left: 7px;
+  }
+}

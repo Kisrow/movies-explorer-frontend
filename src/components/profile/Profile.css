@@ -98,3 +98,43 @@
   background-color: inherit;
   border: none;
 }
+
+@media screen and (max-width: 768px) {
+  .profile {
+    padding: 236px 0 269px;
+  }
+
+  .profile__form-title {
+    margin-bottom: 96px;
+  }
+
+  .profile__form-submit {
+    margin: 210px auto 16px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    padding: 64px 0 40px;
+  }
+
+  .profile__form-container {
+    max-width: 260px;
+  }
+
+  .profile__form-title {
+    margin-bottom: 82px;
+  }
+
+  .profile__form-submit {
+    margin: 378px auto 16px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile__signout {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

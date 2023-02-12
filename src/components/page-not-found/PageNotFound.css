@@ -14,7 +14,7 @@
 
 .page-not-found__error-name {
   padding: 0;
-  margin: 5px auto 184px;
+  margin: 2px auto 181px;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -26,4 +26,29 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
+}
+
+@media screen and (max-width: 768px) {
+  .page-not-found {
+    padding-bottom: 222px;
+    margin: 331px auto 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page-not-found {
+    padding: 0;
+    margin: 249px auto 0;
+  }
+
+  .page-not-found__error-name {
+    margin: 10px auto 281px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  .page-not-found__link-back {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

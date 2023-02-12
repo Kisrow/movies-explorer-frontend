@@ -1,12 +1,9 @@
 .navigation {
   display: flex;
+  justify-content: center;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-}
-
-.navigation_hidden {
-  display: none;
 }
 
 .navigation__list {
@@ -68,17 +65,27 @@
   margin-left: 0;
 }
 
-.navigation_type_mobile {
-  justify-content: center;
-  left: 0;
+.navigation_hidden {
+  display: none;
 }
 
-.navigation__list_type_mobile {
-  margin: 159px auto 621px;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
+@media screen and (max-width: 768px) {
+  /* .navigation {
+    display: none;
+  } */
+  .navigation__list-item_type_profile {
+    display: none;
+  }
+
+  .navigation__list-item_type_movies {
+    display: none;
+  }
+
+  .navigation__list-item_type_saved-movies {
+    display: none;
+  }
 }
+
 
 @media screen and (max-width: 320px) {
   .navigation {

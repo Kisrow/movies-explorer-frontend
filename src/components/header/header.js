@@ -1,14 +1,23 @@
+import { useContext} from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { LocationContext } from '../../context/LocationContext';
 import logo from '../../images/logo.svg';
-import mobileMenu from '../../images/mobile-menu.svg';
 import Navigation from '../navigation/Navigation';
 
 
-function Header() {
+function Header({
+  handleMobileMenyIconClick,
+  auth,
+}) {
+  const location = useContext(LocationContext)
   return (
-    <div className="header">
-      <img src={logo} alt="logo" className="header__logo" />
-      <Navigation />
-      <img src={mobileMenu} alt="открыть меню"/>
+    <div className={`${location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : "header"}`}>
+      <NavLink to="/" ><img src={logo} alt="logo" className="header__logo" /></NavLink>
+      <Navigation 
+        auth = {auth}
+      />
+      <button className={`${auth ? "header__mobile-menu-icon" : "header__mobile-menu-icon_hidden"}`} onClick={handleMobileMenyIconClick}></button>
     </div>
   )
 }

@@ -32,6 +32,7 @@
 .movies-card__movie {
   object-fit: contain;
   max-height: 200px;
+  max-width: 100%;
 }
 
 .movies-card__button-save-movie {

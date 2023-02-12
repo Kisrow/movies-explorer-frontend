@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import { NAVTAB_ITEMS } from '../../utils/constnants';
 
 function NavTab() {
   const navTabItems = NAVTAB_ITEMS.map((item, index) => 
     <li className="navtab__list-item" key={index}>
-      <NavLink to={item.link} className="navtab__list-link">{item.name}</NavLink>
+      <a href={item.link} className="navtab__list-link">{item.name}</a>
     </li>
   );
 
@@ -17,5 +17,5 @@ function NavTab() {
     </nav>
   )
 }
-
+// <NavLink to={item.link} className="navtab__list-link"><a href={item.link}>{item.name}</a></NavLink>
 export default NavTab;

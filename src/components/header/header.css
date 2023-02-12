@@ -14,16 +14,23 @@
   opacity: 0;
 }
 
-.header__button-list {
+.header__mobile-menu-icon {
+  display: none;
+}
+
+.header__mobile-menu-icon_hidden {
+  display: none;
+}
+/* .header__button-list {
   margin: auto 0;
   margin-left: auto;
   padding: 0;
   display: flex;
   align-items: baseline;
   list-style-type: none;
-}
+} */
 
-.header__button {
+/* .header__button {
   margin: 0;
   padding: 0;
   border: none;
@@ -34,13 +41,9 @@
   line-height: 16px;
   text-decoration: none;
   text-align: center;
-}
+} */
 
-.header__button_hidden {
-  display: none;
-}
-
-.header__button_type_login {
+/* .header__button_type_login {
   margin-left: 30px;
   width: 76px;
   padding: 8px 20px;
@@ -48,8 +51,8 @@
   color: rgba(0,0,0,1);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
-}
-
+} */
+/* 
 .header__button_type_profile {
   display: flex;
   align-items: center;
@@ -57,31 +60,50 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 12px;
-}
+} */
 
-.header__button-icon-profile {
+/* .header__button-icon-profile {
   margin: 3px 3px 3px 7px;
   padding: 7px;
   background-color: rgba(49, 49, 49, 1);
   border-radius: 50px;
-}
+} */
 
-.header__button-menu {
+/* .header__button-menu {
   position: absolute;
   top: 15px;
   right: 30px;
   cursor: pointer;
   display: none;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .header {
     padding: 18px 30px;
   }
 
-  .header__button-menu {
-    display: block;
+  .header_type_small {
+    max-width: 396px;
+    padding: 232px 0 0;
   }
+
+  .header__mobile-menu-icon {
+    display: block;
+    width: 44px;
+    height: 44px;
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    background-image: url('../../images/mobile-menu.svg');
+  }
+
+  /* .header__button-menu {
+    display: block;
+  } */
 }
 
 @media screen and (max-width: 320px) {
@@ -89,11 +111,17 @@
     padding: 18px 14px;
   }
 
-  .header__button {
-    font-size: 10px;
+  .header_type_small {
+    max-width: 396px;
+    padding: 56px 0 0;
+    justify-content: center;
   }
-  .header__button_type_login {
+  
+  /* .header__button {
+    font-size: 10px;
+  } */
+  /* .header__button_type_login {
     margin-left: 14px;
     padding: 5px 12px;
-  }
+  } */
 }
