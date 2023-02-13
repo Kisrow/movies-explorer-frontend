@@ -8,7 +8,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 410px) {
   .movies{
     margin: 0 10px;
   }

@@ -1,11 +1,10 @@
 function FilterCheckbox() {
   return (
-    <div className="filterCheckbox">
-      <input type="checkbox" className="custom-checkbox" id="chortMovie-checker" name="chortMovie-checker"></input>
-      <label htmlFor="chortMovie-checker" className="custom-checkbox__label"></label>
-      <p className="filterCheckbox__text">Короткометражки</p>
+    <div className="filter-checkbox">
+      <input type="checkbox" className="filter-checkbox__custom-checkbox" id="chortMovie-checker" name="chortMovie-checker"></input>
+      <label htmlFor="chortMovie-checker" className="filter-checkbox__custom-checkbox-label"></label>
+      <p className="filter-checkbox__text">Короткометражки</p>
     </div>
-    
   )
 }
 
