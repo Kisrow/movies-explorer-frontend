@@ -7,7 +7,7 @@ function Mobile({
 }
   ) {
   return (
-    <div className={`mobile ${isMobileMenuActive ? "mobile_active" : ""}`}>
+    <section className={`mobile ${isMobileMenuActive ? "mobile_active" : ""}`}>
       <div className="mobile__menu">
         <button className="mobile__close" type="button" onClick={closeMobileMenu}></button>
         <Navigation 
@@ -15,7 +15,7 @@ function Mobile({
           auth ={auth}
         />
       </div>
-    </div>
+    </section>
   )
 }
 

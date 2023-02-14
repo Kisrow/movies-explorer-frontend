@@ -1,5 +1,3 @@
-// import { NavLink } from 'react-router-dom';
-
 import { NAVTAB_ITEMS } from '../../utils/constnants';
 
 function NavTab() {
@@ -17,5 +15,5 @@ function NavTab() {
     </nav>
   )
 }
-// <NavLink to={item.link} className="navtab__list-link"><a href={item.link}>{item.name}</a></NavLink>
+
 export default NavTab;

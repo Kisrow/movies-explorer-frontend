@@ -31,7 +31,7 @@
   display: flex;
   width: 34px;
   height: 14px;
-  background-color: rgba(61, 220, 132, 1);
+  background-color: rgb(68, 55, 122);
   border-radius: 20px;
   margin-right: 15px;
   background-image: url(../../images/tumb.svg);
@@ -40,8 +40,9 @@
   background-position: left 2px top 2px;
 }
 
-.filterCheckbox__custom-checkbox:checked+ .filter-checkbox__custom-checkbox-label::before {
+.filter-checkbox__custom-checkbox:checked+ .filter-checkbox__custom-checkbox-label::before {
   background-position: right 2px top 2px;
+  background-color: rgba(61, 220, 132, 1);
 }
 
 @media screen and (max-width: 768px) {

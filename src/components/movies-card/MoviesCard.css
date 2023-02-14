@@ -30,7 +30,6 @@
 }
 
 .movies-card__movie {
-  object-fit: contain;
   max-height: 200px;
   max-width: 100%;
 }

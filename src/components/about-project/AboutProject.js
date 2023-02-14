@@ -2,7 +2,7 @@ import { } from '../../utils/constnants'
 
 function AboutProject() {
   return (
-    <div className="about-project">
+    <section className="about-project">
       <h2 className="about-project__title"><article id="about-project__title">О проекте</article></h2>
       <div className="about-project__grid-container">
         <h3 className="about-project__grid-title">
@@ -24,7 +24,7 @@ function AboutProject() {
         <p className="about-project__timeline-description">Back-end</p>
         <p className="about-project__timeline-description">Front-end</p>
       </div>
-    </div>
+    </section>
   )
 }
 

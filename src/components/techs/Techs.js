@@ -8,7 +8,7 @@ function Techs() {
   );
 
   return (
-    <div className="techs">
+    <section className="techs">
       <h2 className="techs__title" id="techs__title">Технологии</h2>
       <h3 className="techs__text-title">{techs.length} технологий</h3>
       <div className="techs__text-container">
@@ -19,7 +19,7 @@ function Techs() {
       <ul className="techs__list">
         { techs }
       </ul>
-    </div>
+    </section>
   )
 }
 

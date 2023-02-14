@@ -2,7 +2,7 @@ import { PORTFOLIO_ITEMS } from '../../utils/constnants';
 
 function Portfolio() {
   const portfolioItems = PORTFOLIO_ITEMS.map((item, index) => 
-    <li className key={index}>
+    <li key={index}>
       <a href={item.projectLink} target="_blank" rel="noreferrer" className="portfolio__list-link">
         <span className="portfolio__list-text">{item.projectName}</span>&#8599;
       </a>

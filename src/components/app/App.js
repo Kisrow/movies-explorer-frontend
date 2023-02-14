@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 
 import Header from '../header/header';
 import Main from '../main/Main';
@@ -36,41 +36,47 @@ function App() {
     <LocationContext.Provider value={location}>
     <div className="root">
       <div className="app">
-        <Header 
-          handleMobileMenyIconClick = {handleMobileMenyIconClick}
-          auth = {auth}
-        />
-        <Routes>
-          <Route exact path="/" element = {
-            <Main />
-          } />
-          <Route path="/movies" element = {
-            <Movie />
-          } />
-          <Route path="/saved-movies" element = {
-            <SavedMovies />
-          } />
-          <Route path="/profile" element = {
-            <Profile />
-          } />
-          <Route path="/register" element = {
-            <Register />
-          } />
-          <Route path="/login" element = {
-            <Login />
-          } />
-          <Route path="*" element = {
-            <PageNotFound />
-          } />
-        </Routes>
+        <header>
+          <Header 
+            handleMobileMenyIconClick = {handleMobileMenyIconClick}
+            auth = {auth}
+          />
+        </header>
+        <main>
+          <Switch>
+              <Route exact path="/">
+                <Main />
+              </Route>
+              <Route path="/movies">
+                <Movie />
+              </Route>
+              <Route path="/saved-movies">
+                <SavedMovies />
+              </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route>
+              <Route path="/register">
+                <Register />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="*">
+                <PageNotFound />
+              </Route>
+          </Switch>
         <Mobile 
           closeMobileMenu = {closeMobileMenu}
           isMobileMenuActive = {isMobileMenuActive}
           auth = {auth}
         />
-        <Footer 
-          auth = {auth}
-        />
+        </main>
+        <footer>
+          <Footer 
+            auth = {auth}
+          />
+        </footer>
       </div>
     </div>
     </LocationContext.Provider>
