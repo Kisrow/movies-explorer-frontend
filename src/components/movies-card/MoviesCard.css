@@ -63,7 +63,7 @@
   background-position: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 530px) {
   .movies-card__date {
     margin: 14px;
   }
