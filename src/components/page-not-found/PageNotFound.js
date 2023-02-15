@@ -7,7 +7,7 @@ function PageNotFound() {
       <p className="page-not-found__error-name">Страница не найдена</p>
       <NavLink to="/" className="page-not-found__link-back">Назад</NavLink>
     </div>
-  )
+  );
 }
 
 export default PageNotFound;

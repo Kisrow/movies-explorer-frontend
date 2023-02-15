@@ -7,7 +7,7 @@ function SavedMovies() {
       <SearchForm />
       <MoviesCardList />
     </div>
-  )
+  );
 }
 
 export default SavedMovies;

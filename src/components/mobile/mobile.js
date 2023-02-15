@@ -16,7 +16,7 @@ function Mobile({
         />
       </div>
     </section>
-  )
+  );
 }
 
 export default Mobile;

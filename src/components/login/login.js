@@ -8,10 +8,8 @@ function Login() {
       linkLegend = "Ещё не зарегистрированы?"
       linkText = "Регистрация"
       linkUrl = "/register"
-      test = "true" //! будет удалено после проверки
-    >
-    </PageWithForm>
-  )
+    />
+  );
 }
 
 export default Login;

@@ -7,8 +7,7 @@ function Movies() {
       <SearchForm />
       <MoviesCardList />
     </div>
-      
-  )
+  );
 }
 
 export default Movies;

@@ -8,9 +8,8 @@ function Register() {
       linkLegend = "Уже зарегистрированы?"
       linkText = "Войти"
       linkUrl = "/login"
-    >
-    </PageWithForm>
-  )
+    />
+  );
 }
 
 export default Register;

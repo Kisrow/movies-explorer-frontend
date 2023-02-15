@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.movies-card-list__more-movies {
+.movies-card-list__next-movies {
   margin: 61px 0 90px;
   padding: 11px 0 9px;
   width: 100%;
@@ -21,9 +21,10 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
+  cursor: pointer;
 }
 
-.movies-card-list__more-movies_type_saved-movies {
+.movies-card-list__next-movies_type_saved-movies {
   margin: 61px 0 142px;
   opacity: 0;
 }
@@ -35,15 +36,14 @@
     gap: 35px 24px;
   }
 
-  .movies-card-list__more-movies {
+  .movies-card-list__next-movies {
     margin: 79px 0 90px;
   }
 
-  .movies-card-list__more-movies_type_saved-movies {
+  .movies-card-list__next-movies_type_saved-movies {
     margin: 79px 0 63px;
     opacity: 0;
   }
-  
 }
 
 @media screen and (max-width: 530px) {
@@ -54,13 +54,12 @@
     gap: 14px;
   }
 
-  .movies-card-list__more-movies {
+  .movies-card-list__next-movies {
     margin: 79px 0 83px;
   }
 
-  .movies-card-list__more-movies_type_saved-movies {
+  .movies-card-list__next-movies_type_saved-movies {
     margin: 79px 0 56px;
     opacity: 0;
   }
-  
 }

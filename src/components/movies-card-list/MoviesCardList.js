@@ -1,6 +1,10 @@
+import { useContext} from 'react';
+
+import { LocationContext } from '../../context/LocationContext';
 import MoviesCard from '../movies-card/MoviesCard';
 
 function MoviesCardList() {
+  const location = useContext(LocationContext);
   return (
     <>
       <div className="movies-card-list">
@@ -35,9 +39,9 @@ function MoviesCardList() {
           poster="https://avatarko.ru/img/avatarka/100na100/glaza_ognennie_resnici.gif"
         />
       </div>
-      <button className="movies-card-list__more-movies">Ещё</button>
+      <button className={`movies-card-list__next-movies ${location.pathname === "/saved-movies" ? "movies-card-list__next-movies_type_saved-movies" : ""}`}>Ещё</button>
     </>
-  )
+  );
 }
 
 export default MoviesCardList;

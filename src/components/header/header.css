@@ -18,10 +18,6 @@
   display: none;
 }
 
-.header__mobile-menu-icon_hidden {
-  display: none;
-}
-
 @media screen and (max-width: 768px) {
   .header {
     padding: 18px 30px;
@@ -44,6 +40,11 @@
     padding: 0;
     margin: 0;
     background-image: url('../../images/mobile-menu.svg');
+    cursor: pointer;
+  }
+
+  .header__mobile-menu-icon_hidden {
+    display: none;
   }
 }
 

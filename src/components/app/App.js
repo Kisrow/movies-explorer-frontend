@@ -18,17 +18,17 @@ function App() {
   const location = useLocation();
 
   // стейт, состояние мобильного меню
-  const [isMobileMenuActive, setMobileActive] = useState(false)
+  const [isMobileMenuActive, setMobileActive] = useState(false);
 
   //функция, открыть мобильное меню
   function handleMobileMenyIconClick() {
     setMobileActive(true);
-  }
+  };
 
   //функция, закрыть мобильное меню
   function closeMobileMenu() {
-    setMobileActive(false)
-  }
+    setMobileActive(false);
+  };
 
   const auth = true; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
 

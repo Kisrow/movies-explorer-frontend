@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-.page-with-form__form-label:first-child {
+.page-with-form__form-label_type_login {
   opacity: 0;
   order: 1;
 }
@@ -82,6 +82,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
+  cursor: pointer;
 }
 
 .page-with-form__link-text {

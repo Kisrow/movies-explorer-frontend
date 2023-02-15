@@ -18,7 +18,7 @@
 
 /* Movies with chaild */
 @import url('./components/movies/Movies.css');
-@import url('./components/saved-movies/SaveMovies.css');
+@import url('./components/saved-movies/SavedMovies.css');
 @import url('./components/search-form/SearchForm.css');
 @import url('./components/flter-checkbox/FilterCheckbox.css');
 @import url('./components/movies-card-list/MoviesCardList.css');

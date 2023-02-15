@@ -34,29 +34,32 @@
   max-width: 100%;
 }
 
-.movies-card__button-save-movie {
+.movies-card__button {
   width: 100px;
   height: 29px;
   padding: 9px 0;
   margin: auto;
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 11px;
-  background-color: rgba(49, 49, 49, 1);
   color: rgba(255,255,255,1);
   border: none;
   border-radius: 30px;
+  cursor: pointer;
 }
 
-.movies-card__button-save-movie_type_saved {
+.movies-card__button_type_save-movie {
+  background-color: rgba(49, 49, 49, 1);
+}
+
+.movies-card__button_type_saved-movie {
   background-color: rgba(238, 52, 101, 1);
   background-image: url('../../images/icon-movie-saved.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.movies-card__button-save-movie_type_delete {
+.movies-card__button_type_delete-movie {
   background-color: rgba(49, 49, 49, 1);
   background-image: url('../../images/icon-movie-delete.svg');
   background-repeat: no-repeat;

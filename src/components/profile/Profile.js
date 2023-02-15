@@ -17,7 +17,7 @@ function Profile() {
       </form>
       <button className="profile__signout">Выйти из аккаунта</button>
     </div>
-  )
+  );
 }
 
 export default Profile;

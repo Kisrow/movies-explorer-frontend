@@ -16,7 +16,7 @@ function Portfolio() {
         {portfolioItems}
       </ul>
     </div>
-  )
+  );
 }
 
 export default Portfolio;

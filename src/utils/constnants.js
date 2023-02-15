@@ -1,6 +1,6 @@
 module.exports = {
 
-  NAVTAB_ITEMS:[
+  NAVTAB_ITEMS: [
     {
       name: 'О проекте',
       link: '#about-project__title',
@@ -16,8 +16,7 @@ module.exports = {
   ],
 
   // применяемые технологии
-  APPLIED_TECHNOLOGIES: 
-  [
+  APPLIED_TECHNOLOGIES: [
     "HTML",
     "CSS",
     "JS",

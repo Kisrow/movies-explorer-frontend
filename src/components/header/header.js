@@ -10,16 +10,16 @@ function Header({
   handleMobileMenyIconClick,
   auth,
 }) {
-  const location = useContext(LocationContext)
+  const location = useContext(LocationContext);
   return (
-    <div className={`${location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : "header"}`}>
+    <div className={`header ${location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : ""}`}>
       <NavLink to="/" ><img src={logo} alt="logo" className="header__logo" /></NavLink>
       <Navigation 
         auth = {auth}
       />
-      <button className={`${auth ? "header__mobile-menu-icon" : "header__mobile-menu-icon_hidden"}`} onClick={handleMobileMenyIconClick}></button>
+      <button className={`header__mobile-menu-icon ${auth ? "" : "header__mobile-menu-icon_hidden"}`} onClick={handleMobileMenyIconClick}></button>
     </div>
-  )
+  );
 }
 
 export default Header;

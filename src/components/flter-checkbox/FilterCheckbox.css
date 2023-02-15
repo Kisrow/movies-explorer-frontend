@@ -28,6 +28,7 @@
 
 .filter-checkbox__custom-checkbox-label::before {
   content: '';
+  cursor: pointer;
   display: flex;
   width: 34px;
   height: 14px;

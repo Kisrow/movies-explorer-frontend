@@ -15,11 +15,10 @@ function MoviesCard({
         controls
         preload="none"
         poster={poster}
-      >
-      </video>
-      <button className="movies-card__button-save-movie">Сохранить</button>
+      />
+      <button className="movies-card__button movies-card__button_type_save-movie">Сохранить</button>
     </div>
-  )
+  );
 }
 
 export default MoviesCard;

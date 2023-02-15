@@ -13,7 +13,7 @@ function NavTab() {
         {navTabItems}
       </ul>
     </nav>
-  )
+  );
 }
 
 export default NavTab;

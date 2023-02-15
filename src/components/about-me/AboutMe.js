@@ -1,4 +1,4 @@
-import Portfolio from '../portfolio/Portfolio'
+import Portfolio from '../portfolio/Portfolio';
 import photo from '../../images/photo.jpg';
  
 function AboutMe() {
@@ -13,8 +13,8 @@ function AboutMe() {
             <p className="about-me__content-description">
               Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и 
               дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года 
-              работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься 
-              фриланс-заказами и ушёл с постоянной работы.
+              работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал 
+              заниматься фриланс-заказами и ушёл с постоянной работы.
             </p>
             <a href="https://github.com/Kisrow" target="_ blank" className="about-me__content-link">Github</a>
           </div>
@@ -23,7 +23,7 @@ function AboutMe() {
       </div>
       <Portfolio />
     </section>
-  )
+  );
 }
 
 export default AboutMe;

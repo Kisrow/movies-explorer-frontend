@@ -48,7 +48,7 @@
   margin-left: 0;
 }
 
-.navigation__list-item_type_profile-icon {
+.navigation__list-item-icon {
   width: 26px;
   height: 26px;
   display: inline-block;
@@ -92,7 +92,7 @@
     flex-direction: column;
   }
 
-  .navigation__list-item_type_mobile_active {
+  .navigation__list-item_type_mobile-active {
     border-bottom: 2px solid rgba(255,255,255,1);
     box-sizing: border-box;
   }

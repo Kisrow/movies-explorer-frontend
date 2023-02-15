@@ -1,5 +1,3 @@
-import { } from '../../utils/constnants'
-
 function AboutProject() {
   return (
     <section className="about-project">
@@ -25,7 +23,7 @@ function AboutProject() {
         <p className="about-project__timeline-description">Front-end</p>
       </div>
     </section>
-  )
+  );
 }
 
 export default AboutProject;

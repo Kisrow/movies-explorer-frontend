@@ -20,7 +20,7 @@ function Techs() {
         { techs }
       </ul>
     </section>
-  )
+  );
 }
 
 export default Techs;

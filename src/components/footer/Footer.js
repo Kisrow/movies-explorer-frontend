@@ -7,7 +7,7 @@ import { LocationContext } from '../../context/LocationContext';
 function Footer({
   auth,
 }) {
-  const location = useContext(LocationContext)
+  const location = useContext(LocationContext);
 
   const footer_links = FOOTER_LINKS.map((item, index) => 
     <li key={index}>
@@ -15,7 +15,7 @@ function Footer({
     </li>
   );
   return (
-    <div className={`${(auth || location.pathname === "/") ? "footer" : "footer_hidden"}`}>
+    <div className={`footer ${((auth && location.pathname !== "/profile") || location.pathname === "/") ? "" : "footer_hidden"}`}>
       <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
       <div className="footer__container">
         <p className="footer__container-text">&#169; 2023</p>
@@ -24,7 +24,7 @@ function Footer({
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default Footer;
