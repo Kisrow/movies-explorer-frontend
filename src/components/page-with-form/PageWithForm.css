@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-.page-with-form__form-label_type_login {
+.page-with-form__form-container_type_login {
   opacity: 0;
   order: 1;
 }

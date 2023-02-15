@@ -16,7 +16,7 @@ function AboutMe() {
               работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал 
               заниматься фриланс-заказами и ушёл с постоянной работы.
             </p>
-            <a href="https://github.com/Kisrow" target="_ blank" className="about-me__content-link">Github</a>
+            <a href="https://github.com/Kisrow" target="blank" className="about-me__content-link">Github</a>
           </div>
           <img src={photo} alt="Мое фото" className="about-me__content-image"/>
         </div>

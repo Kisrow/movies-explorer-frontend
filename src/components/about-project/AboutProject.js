@@ -1,7 +1,7 @@
 function AboutProject() {
   return (
     <section className="about-project">
-      <h2 className="about-project__title"><article id="about-project__title">О проекте</article></h2>
+      <h2 className="about-project__title" id="about-project__title">О проекте</h2>
       <div className="about-project__grid-container">
         <h3 className="about-project__grid-title">
           Дипломный проект включал 5 этапов
