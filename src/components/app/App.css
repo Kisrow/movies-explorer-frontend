@@ -1,0 +1,12 @@
+.root {
+  background-color: rgba(32, 32, 32, 1);
+}
+
+.app {
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color:rgba(255, 255, 255, 1);
+  background-color: rgba(32, 32, 32, 1);
+}

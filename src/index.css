@@ -1,0 +1,39 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts/fonts.css');
+
+@import url('./components/app/App.css');
+
+/* Header with navigation */
+@import url('./components/header/header.css');
+@import url('./components/navigation/Navigation.css');
+
+/* Main with chaild */
+@import url('./components/main/Main.css');
+@import url('./components/promo/Promo.css');
+@import url('./components/navtab/NavTab.css');
+@import url('./components/about-project/AboutProject.css');
+@import url('./components/techs/Techs.css');
+@import url('./components/about-me/AboutMe.css');
+@import url('./components/portfolio/Portfolio.css');
+
+/* Movies with chaild */
+@import url('./components/movies/Movies.css');
+@import url('./components/saved-movies/SavedMovies.css');
+@import url('./components/search-form/SearchForm.css');
+@import url('./components/flter-checkbox/FilterCheckbox.css');
+@import url('./components/movies-card-list/MoviesCardList.css');
+@import url('./components/movies-card/MoviesCard.css');
+
+/* Profile */
+@import url('./components/profile/Profile.css');
+
+/* Register */
+@import url('./components/register/Register.css');
+@import url('./components/page-with-form/PageWithForm.css');
+
+/* Footer */
+@import url('./components/footer/Footer.css');
+
+@import url('./components/mobile/mobile.css');
+
+@import url('./components/page-not-found/PageNotFound.css');

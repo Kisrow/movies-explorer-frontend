@@ -1,0 +1,117 @@
+.search-form {
+  display: flex;
+  margin-top: 70px;
+  margin-bottom: 69px;
+  background-color: rgba(34, 34, 34, 1);
+  padding: 16px 0;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 9px;
+}
+
+.search-form__fieldset {
+  max-width: 907px;
+  display: flex;
+  flex: 1;
+  border: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  padding: 3px 0;
+  border-right: 1px solid rgba(80, 80, 80, 1);
+  box-sizing: border-box;
+}
+
+.search-form__loop {
+  margin: 0px 21px 0px 29px;
+}
+
+.search-form__input {
+  width: 100%;
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  color: rgba(255,255,255,1 );
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.search-form__input::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: rgba(139, 139, 139, 1);
+}
+
+.search-form__input:focus {
+  outline: none;
+}
+
+.search-form__button {
+  padding: 0 19px 0;
+  margin: 0;
+  border-radius: 48px;
+  width: 34px;
+  background-color: inherit;
+  border: none;
+  background-image: url('../../images/search-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 34px;
+  background-color: rgba(66, 133, 244, 1);
+  margin-right: 11px;
+  cursor: pointer;
+}
+
+.search-form__button:hover {
+  opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+  .search-form {
+    margin-top: 75px;
+    margin-bottom: 109px;
+  }
+
+  .search-form__loop {
+    margin: 0px 20px 0px 29px;
+  }
+
+  .search-form__button {
+    margin-right: 19px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .search-form {
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 29px;
+    background-color: inherit;
+    box-shadow: none;
+  }
+
+  .search-form__fieldset {
+    margin: 0;
+    padding: 0;
+    padding: 17px 0;
+    border: none;
+    background-color: rgba(34, 34, 34, 1);
+    box-shadow: 0px 3px 14px rgb(0 0 0 / 8%);
+    border-radius: 9px;
+  }
+
+  .search-form__loop {
+    display: none;
+  }
+
+  .search-form__input {
+    margin-left: 19px;
+  }
+  
+  .search-form__input::placeholder {
+    font-size: 14px;
+  }
+}
