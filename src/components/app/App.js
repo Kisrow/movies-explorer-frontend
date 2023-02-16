@@ -30,7 +30,7 @@ function App() {
     setMobileActive(false);
   };
 
-  const auth = false; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
+  const auth = true; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
 
   return (
     <LocationContext.Provider value={location}>

@@ -6,8 +6,8 @@ import MoviesCard from '../movies-card/MoviesCard';
 function MoviesCardList() {
   const location = useContext(LocationContext);
   return (
-    <>
-      <div className="movies-card-list">
+    <div className="movies-card-list">
+      <div className="movies-card-list__container">
         <MoviesCard
           name="test"
           duration="55"
@@ -40,7 +40,7 @@ function MoviesCardList() {
         />
       </div>
       <button className={`movies-card-list__next-movies ${location.pathname === "/saved-movies" ? "movies-card-list__next-movies_type_saved-movies" : ""}`}>Ещё</button>
-    </>
+    </div>
   );
 }
 

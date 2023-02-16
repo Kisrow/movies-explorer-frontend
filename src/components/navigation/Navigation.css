@@ -77,6 +77,10 @@
   margin-left: 0;
 }
 
+.navigation__list-item_hidden {
+  display: none;
+}
+
 .navigation_hidden {
   display: none;
 }
