@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 
 import Header from '../header/header';
@@ -11,14 +11,39 @@ import Login from '../login/login';
 import Footer from '../footer/Footer';
 import Mobile from '../mobile/mobile';
 import PageNotFound from '../page-not-found/PageNotFound';
+
 import { LocationContext } from '../../context/LocationContext';
+
+import { moviesApi } from '../../utils/MoviesApi';
 
 
 function App() {
   const location = useLocation();
+ 
+  // стейт, фильмы с сервера
+  const [movies, setMovies] = useState([]);
 
   // стейт, состояние мобильного меню
   const [isMobileMenuActive, setMobileActive] = useState(false);
+
+  useEffect(() => {
+    getAllMovies();
+  }, []);
+
+  function test() {
+    console.dir(location.pathname);
+  };
+
+  test();
+
+  // получить все фильмы с чужого сервера
+  function getAllMovies() {
+    moviesApi.getAllMovies()
+      .then(moviesFromAdditionalServer => {
+        setMovies(moviesFromAdditionalServer)
+      })
+      .catch((err) => console.log(err))
+  };
 
   //функция, открыть мобильное меню
   function handleMobileMenyIconClick() {
@@ -29,7 +54,7 @@ function App() {
   function closeMobileMenu() {
     setMobileActive(false);
   };
-
+  
   const auth = true; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
 
   return (
