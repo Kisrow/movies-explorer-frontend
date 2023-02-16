@@ -1,4 +1,4 @@
-import { PORTFOLIO_ITEMS } from '../../utils/constnants';
+import { PORTFOLIO_ITEMS } from '../../utils/constants';
 
 function Portfolio() {
   const portfolioItems = PORTFOLIO_ITEMS.map((item, index) => 

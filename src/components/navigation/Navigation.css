@@ -20,6 +20,10 @@
   margin-left: 30px;
 }
 
+.navigation__list-item:hover {
+  opacity: .7;
+}
+
 .navigation__list-item_type_mobile-profile {
   display: flex;
   align-items: center;

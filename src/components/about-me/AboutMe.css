@@ -62,6 +62,10 @@
   text-decoration: none;
 }
 
+.about-me__content-link:hover {
+  opacity: 0.7;
+}
+
 .about-me__content-image {
   border-radius: 10px;
   max-width: 270px;

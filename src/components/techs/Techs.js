@@ -1,4 +1,4 @@
-import { APPLIED_TECHNOLOGIES } from '../../utils/constnants';
+import { APPLIED_TECHNOLOGIES } from '../../utils/constants';
 
 function Techs() {
   const techs = APPLIED_TECHNOLOGIES.map((item, index) => 

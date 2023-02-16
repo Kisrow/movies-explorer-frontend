@@ -1,6 +1,6 @@
 import { useContext} from 'react';
 
-import { FOOTER_LINKS } from '../../utils/constnants';
+import { FOOTER_LINKS } from '../../utils/constants';
 
 import { LocationContext } from '../../context/LocationContext';
 
@@ -11,7 +11,7 @@ function Footer({
 
   const footer_links = FOOTER_LINKS.map((item, index) => 
     <li key={index}>
-      <a href={item.link} target={'_blank'} rel="noreferrer" className="footer__container-link">{item.name}</a>
+      <a href={item.link} target="_blank" rel="noreferrer" className="footer__container-link">{item.name}</a>
     </li>
   );
   return (

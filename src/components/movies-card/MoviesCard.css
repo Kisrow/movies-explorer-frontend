@@ -48,6 +48,10 @@
   cursor: pointer;
 }
 
+.movies-card__button:hover {
+  opacity: .7;
+}
+
 .movies-card__button_type_save-movie {
   background-color: rgba(49, 49, 49, 1);
 }

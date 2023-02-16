@@ -1,4 +1,4 @@
-import { NAVTAB_ITEMS } from '../../utils/constnants';
+import { NAVTAB_ITEMS } from '../../utils/constants';
 
 function NavTab() {
   const navTabItems = NAVTAB_ITEMS.map((item, index) => 

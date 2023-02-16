@@ -28,6 +28,10 @@
   margin: 0;
 }
 
+.navtab__list-item:hover {
+  opacity: .7;
+}
+
 .navtab__list-link {
   color: rgba(255,255,255,1);
   text-decoration: none;

@@ -4,6 +4,10 @@
   justify-content: space-between;
 }
 
+.header__logo-link:hover {
+  opacity: .7;
+}
+
 .header_type_small {
   max-width: 400px;
   margin: auto;
@@ -16,6 +20,10 @@
 
 .header__mobile-menu-icon {
   display: none;
+}
+
+.header__mobile-menu-icon:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 768px) {

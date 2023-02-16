@@ -89,6 +89,10 @@
   cursor: pointer;
 }
 
+.profile__form-submit:hover {
+  opacity: .7;
+}
+
 .profile__signout {
   margin: 0;
   padding: 0;
@@ -99,6 +103,10 @@
   background-color: inherit;
   border: none;
   cursor: pointer;
+}
+
+.profile__signout:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 768px) {

@@ -24,22 +24,6 @@
   letter-spacing: -0.04em;
 }
 
-/* .portfolio__list-item {
-  margin: 0 0 20px;
-  padding: 0 0 9px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid rgba(66, 66, 66, 1);
-  box-sizing: border-box;
-}
-
-.portfolio__list-item:last-child {
-  margin: 0;
-  padding: 0;
-  border: none;
-} */
-
 .portfolio__list-link {
   font-style: normal;
   font-weight: 400;
@@ -54,6 +38,10 @@
   border-bottom: 1px solid rgba(66, 66, 66, 1);
   box-sizing: border-box;
   text-decoration: none;
+}
+
+.portfolio__list-link:hover {
+  opacity: 0.7;
 }
 
 .portfolio__list-text {

@@ -13,7 +13,7 @@ function Header({
   const location = useContext(LocationContext);
   return (
     <div className={`header ${location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : ""}`}>
-      <NavLink to="/" ><img src={logo} alt="logo" className="header__logo" /></NavLink>
+      <NavLink to="/" className="header__logo-link"><img src={logo} alt="logo" /></NavLink>
       <Navigation 
         auth = {auth}
       />

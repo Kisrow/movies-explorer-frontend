@@ -46,6 +46,10 @@
   background-color: rgba(61, 220, 132, 1);
 }
 
+.filter-checkbox__custom-checkbox:hover {
+  opacity: .7;
+}
+
 @media screen and (max-width: 768px) {
   .filter-checkbox {
     padding-left: 20px;
