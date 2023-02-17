@@ -26,15 +26,12 @@ function App() {
   // стейт, состояние мобильного меню
   const [isMobileMenuActive, setMobileActive] = useState(false);
 
+  // стейт, сосотояние чекбокса
+  const [isChecked, setChecked] = useState(false);
+
   useEffect(() => {
     getAllMovies();
   }, []);
-
-  function test() {
-    console.dir(location.pathname);
-  };
-
-  test();
 
   // получить все фильмы с чужого сервера
   function getAllMovies() {
@@ -45,16 +42,42 @@ function App() {
       .catch((err) => console.log(err))
   };
 
-  //функция, открыть мобильное меню
+  // открыть мобильное меню
   function handleMobileMenyIconClick() {
     setMobileActive(true);
   };
-
-  //функция, закрыть мобильное меню
+  // закрыть мобильное меню
   function closeMobileMenu() {
     setMobileActive(false);
   };
-  
+
+  // сменить статус чекбокса
+  function checkboxChangeState(e) {
+    setChecked(e.target.checked);
+  };
+
+  // сортировать входящий массив фильм по состоянию чекбокса
+  function filterByCheckbox(arrayOfMovies) {
+    if (isChecked) {
+      return arrayOfMovies.filter((i) => i.duration <= 90);
+    } else {
+      return arrayOfMovies;
+    }
+  }
+  // сортировать входящий массив фильма по имени фильма (только рус)
+  function filterByMovieName(arrayOfMovies, filmName) {
+    const test = arrayOfMovies.filter((i) => {
+      return i.nameRU.includes(filmName);
+    });
+    console.log(test);
+    return test;
+  }
+
+  // найти все фильмы с учетом чекбокса(продолжительности)
+  function fullFilter() {
+    filterByMovieName(filterByCheckbox(movies), "а"); //! инпут из serchForm сюда
+  }
+
   const auth = true; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
 
   return (
@@ -73,7 +96,12 @@ function App() {
                 <Main />
               </Route>
               <Route path="/movies">
-                <Movie />
+                <Movie
+                  movies = {movies}
+                  checkboxChangeState = {checkboxChangeState}
+                  filterByCheckbox = {filterByCheckbox}
+                  filterByMovieName = {filterByMovieName}
+                />
               </Route>
               <Route path="/saved-movies">
                 <SavedMovies />

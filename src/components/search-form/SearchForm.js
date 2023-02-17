@@ -2,7 +2,10 @@ import FilterCheckbox from '../flter-checkbox/FilterCheckbox';
 
 import loop from '../../images/loop.svg';
 
-function SearchForm() {
+function SearchForm({
+  checkboxChangeState,
+  filterByCheckbox,
+}) {
   return (
     <form className="search-form">
       <fieldset className="search-form__fieldset">
@@ -10,7 +13,9 @@ function SearchForm() {
         <input placeholder="Фильм" className="search-form__input" type="text" name="searchMovie" required></input>
         <button type="submit" className="search-form__button"></button>
       </fieldset>
-      <FilterCheckbox />
+      <FilterCheckbox 
+        checkboxChangeState = {checkboxChangeState}
+      />
     </form>
   );
 }
