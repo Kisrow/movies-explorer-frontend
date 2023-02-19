@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+.movies-card-list__next-movies_hidden {
+  display: none;
+}
+
 .movies-card-list__next-movies_type_saved-movies {
   margin: 61px 0 142px;
   opacity: 0;

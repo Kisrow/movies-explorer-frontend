@@ -1,9 +1,9 @@
 function FilterCheckbox({
-  checkboxChangeState,
+  setChecked,
 }) {
-  // function test(e) {
-  //   console.log(e.target.checked);
-  // }
+  function checkboxChangeState(e) {
+    setChecked(e.target.checked)
+  }
   return (
     <div className="filter-checkbox">
       <input type="checkbox" className="filter-checkbox__custom-checkbox" id="chortMovie-checker" name="chortMovie-checker" onChange={checkboxChangeState}></input>

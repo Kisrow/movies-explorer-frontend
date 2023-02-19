@@ -22,6 +22,7 @@ function App() {
  
   // стейт, фильмы с сервера
   const [movies, setMovies] = useState([]);
+  const [renderMovies, setRenderMovies] = useState([]);
 
   // стейт, состояние мобильного меню
   const [isMobileMenuActive, setMobileActive] = useState(false);
@@ -51,11 +52,6 @@ function App() {
     setMobileActive(false);
   };
 
-  // сменить статус чекбокса
-  function checkboxChangeState(e) {
-    setChecked(e.target.checked);
-  };
-
   // сортировать входящий массив фильм по состоянию чекбокса
   function filterByCheckbox(arrayOfMovies) {
     if (isChecked) {
@@ -66,16 +62,14 @@ function App() {
   }
   // сортировать входящий массив фильма по имени фильма (только рус)
   function filterByMovieName(arrayOfMovies, filmName) {
-    const test = arrayOfMovies.filter((i) => {
+    return arrayOfMovies.filter((i) => {
       return i.nameRU.includes(filmName);
     });
-    console.log(test);
-    return test;
   }
 
   // найти все фильмы с учетом чекбокса(продолжительности)
-  function fullFilter() {
-    filterByMovieName(filterByCheckbox(movies), "а"); //! инпут из serchForm сюда
+  function searchCardToRender(filmName) {
+    setRenderMovies(filterByMovieName(filterByCheckbox(movies), filmName)); //! инпут из serchForm сюда
   }
 
   const auth = true; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
@@ -98,9 +92,9 @@ function App() {
               <Route path="/movies">
                 <Movie
                   movies = {movies}
-                  checkboxChangeState = {checkboxChangeState}
-                  filterByCheckbox = {filterByCheckbox}
-                  filterByMovieName = {filterByMovieName}
+                  setChecked = {setChecked}
+                  searchCardToRender = {searchCardToRender}
+                  renderMovies = {renderMovies}
                 />
               </Route>
               <Route path="/saved-movies">
