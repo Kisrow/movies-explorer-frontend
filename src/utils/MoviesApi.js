@@ -1,8 +1,8 @@
-import { ADDITIONAL_URL } from './config';
+import { ADDITIONAL_API_URL } from './config';
 
 class MoviesApi {
   constructor({url}) {
-    this._url = ADDITIONAL_URL;
+    this._url = url;
   }
 
   _chekResponse(res) {
@@ -21,5 +21,5 @@ class MoviesApi {
 }
 
 export const moviesApi = new MoviesApi({
-  url: ADDITIONAL_URL,
+  url: ADDITIONAL_API_URL,
 });

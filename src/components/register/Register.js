@@ -1,6 +1,8 @@
 import PageWithForm from '../page-with-form/PageWithForm';
 
-function Register() {
+function Register({
+  register,
+}) {
   return (
     <PageWithForm
       title = "Добро пожаловать!"
@@ -8,6 +10,7 @@ function Register() {
       linkLegend = "Уже зарегистрированы?"
       linkText = "Войти"
       linkUrl = "/login"
+      formSubmit = {register}
     />
   );
 }

@@ -8,16 +8,16 @@ import Navigation from '../navigation/Navigation';
 
 function Header({
   handleMobileMenyIconClick,
-  auth,
+  logedIn,
 }) {
   const location = useContext(LocationContext);
   return (
     <div className={`header ${location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : ""}`}>
       <NavLink to="/" className="header__logo-link"><img src={logo} alt="logo" /></NavLink>
       <Navigation 
-        auth = {auth}
+        logedIn = {logedIn}
       />
-      <button className={`header__mobile-menu-icon ${auth ? "" : "header__mobile-menu-icon_hidden"}`} onClick={handleMobileMenyIconClick}></button>
+      <button className={`header__mobile-menu-icon ${logedIn ? "" : "header__mobile-menu-icon_hidden"}`} onClick={handleMobileMenyIconClick}></button>
     </div>
   );
 }

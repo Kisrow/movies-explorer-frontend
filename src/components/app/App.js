@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
 import Header from '../header/header';
 import Main from '../main/Main';
@@ -15,13 +15,19 @@ import PageNotFound from '../page-not-found/PageNotFound';
 import { LocationContext } from '../../context/LocationContext';
 
 import { moviesApi } from '../../utils/MoviesApi';
+import { savedMoviesApi } from '../../utils/MainApi';
 
 
 function App() {
   const location = useLocation();
+  const history = useHistory();
+
+  // стейт, залогинен ли пользователь
+  const [logedIn, setLogedIn] = useState(false);
  
   // стейт, фильмы с сервера
   const [movies, setMovies] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([]);
   const [renderMovies, setRenderMovies] = useState([]);
 
   // стейт, состояние мобильного меню
@@ -30,9 +36,43 @@ function App() {
   // стейт, сосотояние чекбокса
   const [isChecked, setChecked] = useState(false);
 
+  function register(name, email, password) {
+    savedMoviesApi.register(name, email, password)
+      .then((data) => {
+        if (data) {
+          history.push('/login');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  function login(email, password) {
+    savedMoviesApi.login(email, password)
+      .then((data) => {
+        if (data) {
+          setLogedIn(true);
+          history.push('/');
+          getAllSavedMovies();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     getAllMovies();
   }, []);
+
+  function getAllSavedMovies() {
+    savedMoviesApi.getAllSavedMovies()
+      .then((savedMovies) => {
+        setSavedMovies(savedMovies);
+      })
+      .catch((err) => console.log(err))
+  };
 
   // получить все фильмы с чужого сервера
   function getAllMovies() {
@@ -72,8 +112,6 @@ function App() {
     setRenderMovies(filterByMovieName(filterByCheckbox(movies), filmName)); //! инпут из serchForm сюда
   }
 
-  const auth = true; //! костыль для авторизации, нужен для адекватного отображения верстки, после будет удален
-
   return (
     <LocationContext.Provider value={location}>
     <div className="root">
@@ -81,7 +119,7 @@ function App() {
         <header>
           <Header 
             handleMobileMenyIconClick = {handleMobileMenyIconClick}
-            auth = {auth}
+            logedIn = {logedIn}
           />
         </header>
         <main>
@@ -98,16 +136,22 @@ function App() {
                 />
               </Route>
               <Route path="/saved-movies">
-                <SavedMovies />
+                <SavedMovies 
+                  savedMovies = {savedMovies}
+                />
               </Route>
               <Route path="/profile">
                 <Profile />
               </Route>
               <Route path="/register">
-                <Register />
+                <Register 
+                  register = {register}
+                />
               </Route>
               <Route path="/login">
-                <Login />
+                <Login 
+                  login = {login}
+                />
               </Route>
               <Route path="*">
                 <PageNotFound />
@@ -116,12 +160,12 @@ function App() {
         <Mobile 
           closeMobileMenu = {closeMobileMenu}
           isMobileMenuActive = {isMobileMenuActive}
-          auth = {auth}
+          logedIn = {logedIn}
         />
         </main>
         <footer>
           <Footer 
-            auth = {auth}
+            logedIn = {logedIn}
           />
         </footer>
       </div>

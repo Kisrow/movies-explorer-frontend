@@ -3,7 +3,7 @@ import Navigation from '../navigation/Navigation';
 function Mobile({
   isMobileMenuActive,
   closeMobileMenu,
-  auth,
+  logedIn,
 }
   ) {
   return (
@@ -12,7 +12,7 @@ function Mobile({
         <button className="mobile__close" type="button" onClick={closeMobileMenu}></button>
         <Navigation 
           isMobileMenuActive = {isMobileMenuActive}
-          auth ={auth}
+          logedIn ={logedIn}
         />
       </div>
     </section>
