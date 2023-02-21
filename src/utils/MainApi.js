@@ -12,6 +12,30 @@ class SavedMoviesApi {
     } else
     return Promise.reject(res);
   }
+
+  getAllSavedMovies() {
+    return fetch(`${this._url}/movies`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(this._chekResponse);
+  }
+  
+  getUserInfo() {
+    return fetch(`${this._url}/users/me`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(this._chekResponse);
+  }
   
   register(name, email, password) {
     return fetch(`${this._url}/signup`, {
@@ -40,17 +64,28 @@ class SavedMoviesApi {
     .then(this._chekResponse);
   }
   
-  getAllSavedMovies() {
-    return fetch(`${this._url}/movies`, {
-      method: 'GET',
+  logOut() {
+    return fetch(`${this._url}/signout`, {
+      method: 'POST',
+      headers: this._headers,
       credentials: 'include',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      }
     })
     .then(this._chekResponse);
   }
+
+  updateUserDate(name, email) {
+    return fetch(`${this._url}/users/me`, {
+      method: 'PATCH',
+      headers: this._headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        name,
+        email,
+      })
+    })
+    .then(this._chekResponse);
+  }
+  
 }
 
 export const savedMoviesApi = new SavedMoviesApi({

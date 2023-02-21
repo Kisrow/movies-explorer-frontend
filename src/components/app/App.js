@@ -13,6 +13,7 @@ import Mobile from '../mobile/mobile';
 import PageNotFound from '../page-not-found/PageNotFound';
 
 import { LocationContext } from '../../context/LocationContext';
+import { CurrentUserContext } from '../../context/CurrentUserContext';
 
 import { moviesApi } from '../../utils/MoviesApi';
 import { savedMoviesApi } from '../../utils/MainApi';
@@ -24,18 +25,23 @@ function App() {
 
   // стейт, залогинен ли пользователь
   const [logedIn, setLogedIn] = useState(false);
- 
-  // стейт, фильмы с сервера
+  const [currentUser, setCurrentUser] = useState({});
+  // стейт, фильмы
   const [movies, setMovies] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
   const [renderMovies, setRenderMovies] = useState([]);
-
   // стейт, состояние мобильного меню
   const [isMobileMenuActive, setMobileActive] = useState(false);
-
   // стейт, сосотояние чекбокса
   const [isChecked, setChecked] = useState(false);
 
+  useEffect(() => {
+    getAllSavedMovies();
+    getInfoCurrentUser();
+    getAllMovies();
+  }, []);
+
+  // регистрирует аккаунт
   function register(name, email, password) {
     savedMoviesApi.register(name, email, password)
       .then((data) => {
@@ -48,23 +54,21 @@ function App() {
       });
   };
 
+  // авторизуется на сайте
   function login(email, password) {
     savedMoviesApi.login(email, password)
       .then((data) => {
         if (data) {
           setLogedIn(true);
-          history.push('/');
+          history.push('/movies');
           getAllSavedMovies();
+          getInfoCurrentUser();
         }
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  useEffect(() => {
-    getAllMovies();
-  }, []);
 
   function getAllSavedMovies() {
     savedMoviesApi.getAllSavedMovies()
@@ -78,7 +82,28 @@ function App() {
   function getAllMovies() {
     moviesApi.getAllMovies()
       .then(moviesFromAdditionalServer => {
-        setMovies(moviesFromAdditionalServer)
+        setMovies(moviesFromAdditionalServer);
+      })
+      .catch((err) => console.log(err))
+  };
+
+  function getInfoCurrentUser() {
+    savedMoviesApi.getUserInfo()
+      .then((date) => {
+        if (date) {
+          setLogedIn(true);
+          setCurrentUser(date);
+        } else {
+          setLogedIn(false);
+        }
+      })
+      .catch((err) => console.log(err))
+  };
+
+  function updateUserDate(name, email) {
+    savedMoviesApi.updateUserDate(name, email)
+      .then((date) => {
+        setCurrentUser(date);
       })
       .catch((err) => console.log(err))
   };
@@ -109,11 +134,20 @@ function App() {
 
   // найти все фильмы с учетом чекбокса(продолжительности)
   function searchCardToRender(filmName) {
-    setRenderMovies(filterByMovieName(filterByCheckbox(movies), filmName)); //! инпут из serchForm сюда
+    setRenderMovies(filterByMovieName(filterByCheckbox(movies), filmName));
   }
 
+  function logOut() {
+    savedMoviesApi.logOut()
+      .then((res) => {
+        setLogedIn(false);
+        console.log(res.message)
+        history.push('/');
+      })
+  }
   return (
     <LocationContext.Provider value={location}>
+    <CurrentUserContext.Provider value={currentUser}>
     <div className="root">
       <div className="app">
         <header>
@@ -141,7 +175,10 @@ function App() {
                 />
               </Route>
               <Route path="/profile">
-                <Profile />
+                <Profile 
+                  logOut = {logOut}
+                  updateUserDate = {updateUserDate}
+                />
               </Route>
               <Route path="/register">
                 <Register 
@@ -170,6 +207,7 @@ function App() {
         </footer>
       </div>
     </div>
+    </CurrentUserContext.Provider>
     </LocationContext.Provider>
   );
 }
