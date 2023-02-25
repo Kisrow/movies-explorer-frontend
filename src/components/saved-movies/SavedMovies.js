@@ -13,7 +13,7 @@ function SavedMovies({
   isErrorGetSavedMovies,
 }) {
   return (
-    <div className="saved-movies">
+    <section className="saved-movies">
       <SearchForm 
         searchCardToRender = {searchCardToRender}
         setShortChecked = {setShortChecked}
@@ -27,7 +27,7 @@ function SavedMovies({
         deleteMovie = {deleteMovie}
         isErrorHappend = {isErrorGetSavedMovies}
       />
-    </div>
+    </section>
   );
 }
 
