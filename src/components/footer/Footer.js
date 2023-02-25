@@ -15,7 +15,7 @@ function Footer({
     </li>
   );
   return (
-    <div className={`footer ${((logedIn && location.pathname !== "/profile") || location.pathname === "/") ? "" : "footer_hidden"}`}>
+    <div className={`footer ${((logedIn && location.pathname !== "/profile" && location.pathname !== "/not-found") || location.pathname === "/") ? "" : "footer_hidden"}`}>
       <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
       <div className="footer__container">
         <p className="footer__container-text">&#169; 2023</p>

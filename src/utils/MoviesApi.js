@@ -14,7 +14,11 @@ class MoviesApi {
   
   getAllMovies() {
     return fetch(this._url, {
-  
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
     })
     .then(this._chekResponse)
   }

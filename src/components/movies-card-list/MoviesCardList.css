@@ -9,6 +9,19 @@
   justify-content: center;
 }
 
+.movies-card-list__error {
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+.movies-card-list__error_hidden {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: none;
+}
+
 .movies-card-list__next-movies {
   margin: 61px 0 90px;
   padding: 11px 0 9px;

@@ -11,8 +11,9 @@ function Header({
   logedIn,
 }) {
   const location = useContext(LocationContext);
+  
   return (
-    <div className={`header ${location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : ""}`}>
+    <div className={`header ${location.pathname !== "/not-found" ? location.pathname === "/register" || location.pathname === "/login" ? "header_type_small" : "" : "header_hidden"}`}>
       <NavLink to="/" className="header__logo-link"><img src={logo} alt="logo" /></NavLink>
       <Navigation 
         logedIn = {logedIn}

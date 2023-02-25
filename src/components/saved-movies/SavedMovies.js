@@ -3,12 +3,29 @@ import MoviesCardList from '../movies-card-list/MoviesCardList';
 
 function SavedMovies({
   savedMovies,
+  renderSavedMovies,
+  deleteMovie,
+  searchCardToRender,
+  setShortChecked,
+  isShortChecked,
+  setSearchSavedMovieName,
+  searchSavedMovieName,
+  isErrorGetSavedMovies,
 }) {
   return (
     <div className="saved-movies">
-      <SearchForm />
+      <SearchForm 
+        searchCardToRender = {searchCardToRender}
+        setShortChecked = {setShortChecked}
+        isShortChecked = {isShortChecked}
+        setSearchSavedMovieName = {setSearchSavedMovieName}
+        searchSavedMovieName = {searchSavedMovieName}
+      />
       <MoviesCardList 
-        renderMovies = {savedMovies}
+        renderMovies = {renderSavedMovies}
+        savedMovies = {savedMovies}
+        deleteMovie = {deleteMovie}
+        isErrorHappend = {isErrorGetSavedMovies}
       />
     </div>
   );

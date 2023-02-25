@@ -9,8 +9,11 @@ class SavedMoviesApi {
   _chekResponse(res) {
     if (res.ok) {
       return res.json();
-    } else
-    return Promise.reject(res);
+    }
+    return res.json()
+      .then((err) => {
+          return Promise.reject(err);
+      });
   }
 
   getAllSavedMovies() {
@@ -73,6 +76,37 @@ class SavedMoviesApi {
     .then(this._chekResponse);
   }
 
+  saveMovie(movie) {
+    return fetch(`${this._url}/movies`, {
+      method: 'POST',
+      headers: this._headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        country: movie.country,
+        director: movie.director,
+        duration: movie.duration,
+        year: movie.year,
+        description: movie.description,
+        image: "https://api.nomoreparties.co" + movie.image.url,
+        trailerLink: movie.trailerLink,
+        thumbnail: "https://api.nomoreparties.co" + movie.image.formats.thumbnail.url,
+        movieId: movie.id,
+        nameRU: movie.nameRU,
+        nameEN: movie.nameEN
+      })
+    })
+    .then(this._chekResponse);
+  }
+
+  deleteMovie(idMovie) {
+    return fetch(`${this._url}/movies/${idMovie}`, {
+      method: 'DELETE',
+      credentials: 'include',
+      headers: this._headers,
+    })
+    .then(this._chekResponse);
+  }
+
   updateUserDate(name, email) {
     return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
@@ -89,6 +123,6 @@ class SavedMoviesApi {
 }
 
 export const savedMoviesApi = new SavedMoviesApi({
-  url: "http://localhost:3000",
+  url: OWN_API_URL,
   headers: OWN_API_HEADERS,
 });

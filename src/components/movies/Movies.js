@@ -1,11 +1,22 @@
-import SearchForm from '../search-form/SearchForm';
-import MoviesCardList from '../movies-card-list/MoviesCardList';
 import { useEffect, useLayoutEffect, useState } from 'react';
 
+import SearchForm from '../search-form/SearchForm';
+import MoviesCardList from '../movies-card-list/MoviesCardList';
+
+
 function Movies({
-  setChecked,
-  searchCardToRender,
   renderMovies,
+  savedMovies,
+  setChecked,
+  isChecked,
+  searchCardToRender,
+  setSearchMovieName,
+  searchMovieName,
+  saveMovie,
+  deleteMovie,
+  isErrorGetMovies,
+  isErrorSearchForm,
+  isActivePreloader,
 }) {
   const [renderMoviesVisibleRows, setRenderMoviesVisibleRows] = useState([]);
   const [isButtonNextMoviesActive, setButtonNextMoviesActive] = useState(true);
@@ -74,12 +85,22 @@ function Movies({
     <section className="movies">
       <SearchForm 
         setChecked = {setChecked}
+        isChecked = {isChecked}
         searchCardToRender = {searchCardToRender}
+        setSearchMovieName = {setSearchMovieName}
+        searchMovieName = {searchMovieName}
+        isErrorSearchForm = {isErrorSearchForm}
       />
       <MoviesCardList 
         renderMovies = {renderMoviesVisibleRows}
+        savedMovies = {savedMovies}
         addNextRow = {addNextRow}
         isButtonNextMoviesActive = {isButtonNextMoviesActive}
+        saveMovie = {saveMovie}
+        deleteMovie = {deleteMovie}
+        buttonDescription = "Сохранить"
+        isErrorHappend = {isErrorGetMovies}
+        isActivePreloader = {isActivePreloader}
       />
     </section>
   );
