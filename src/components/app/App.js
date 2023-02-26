@@ -217,6 +217,9 @@ function App() {
         setLogedIn(false);
         sessionStorage.clear();
         setRenderMovies([]);
+        setErrorGetMovies(false);
+        setActivePreloader(false);
+        setNoneSearch(true);
         setSearchMovieName('');
         setChecked(false);
         history.push('/');
