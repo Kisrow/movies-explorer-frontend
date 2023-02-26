@@ -29,7 +29,7 @@
 
 /* Register */
 @import url('./components/register/Register.css');
-@import url('./components/page-with-form/PageWithForm.css');
+@import url('./components/login/login.css');
 
 /* Footer */
 @import url('./components/footer/Footer.css');

@@ -18,6 +18,10 @@
   opacity: 0;
 }
 
+.header_hidden {
+  visibility: hidden;
+}
+
 .header__mobile-menu-icon {
   display: none;
 }
@@ -65,5 +69,10 @@
     max-width: 396px;
     padding: 56px 0 0;
     justify-content: center;
+  }
+
+  .header__mobile-menu-icon {
+    width: 40px;
+    height: 37px;
   }
 }

@@ -1,11 +1,32 @@
 import SearchForm from '../search-form/SearchForm';
 import MoviesCardList from '../movies-card-list/MoviesCardList';
 
-function SavedMovies() {
+function SavedMovies({
+  savedMovies,
+  renderSavedMovies,
+  deleteMovie,
+  searchCardToRender,
+  setShortChecked,
+  isShortChecked,
+  setSearchSavedMovieName,
+  searchSavedMovieName,
+  isErrorGetSavedMovies,
+}) {
   return (
     <section className="saved-movies">
-      <SearchForm />
-      <MoviesCardList />
+      <SearchForm 
+        searchCardToRender = {searchCardToRender}
+        setShortChecked = {setShortChecked}
+        isShortChecked = {isShortChecked}
+        setSearchSavedMovieName = {setSearchSavedMovieName}
+        searchSavedMovieName = {searchSavedMovieName}
+      />
+      <MoviesCardList 
+        renderMovies = {renderSavedMovies}
+        savedMovies = {savedMovies}
+        deleteMovie = {deleteMovie}
+        isErrorHappend = {isErrorGetSavedMovies}
+      />
     </section>
   );
 }

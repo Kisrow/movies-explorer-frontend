@@ -1,5 +1,6 @@
 .search-form {
   display: flex;
+  position: relative;
   margin-top: 70px;
   margin-bottom: 69px;
   background-color: rgba(34, 34, 34, 1);
@@ -47,6 +48,23 @@
 
 .search-form__input:focus {
   outline: none;
+}
+
+.search-form__input-error {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 63px;
+  min-height: 18px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+  color: rgba(238, 52, 101, 1);
+  opacity: 0;
+}
+
+.search-form__input-error_active {
+  opacity: 1;
 }
 
 .search-form__button {
@@ -113,5 +131,10 @@
   
   .search-form__input::placeholder {
     font-size: 14px;
+  }
+
+  .search-form__input-error{
+    top: 66px;
+    left: 18px;
   }
 }

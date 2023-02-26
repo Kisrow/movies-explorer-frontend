@@ -62,7 +62,6 @@
 .techs__list-item {
   width: 90px;
   padding: 21px 0;
-  /* margin-right: 10px; */
   background-color: rgba(48, 48, 48, 1);
   border-radius: 10px;
 }
@@ -85,7 +84,6 @@
     width: 84px;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   .techs__text-title {
