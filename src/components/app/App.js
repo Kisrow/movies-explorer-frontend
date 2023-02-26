@@ -219,11 +219,12 @@ function App() {
         setRenderMovies([]);
         setErrorGetMovies(false);
         setActivePreloader(false);
+        setErrorSearchForm(false);
         setNoneSearch(true);
         setSearchMovieName('');
         setChecked(false);
-        history.push('/');
       })
+      .then(() => history.push('/'))
       .catch((err) => console.log(err));
   };
   return (
