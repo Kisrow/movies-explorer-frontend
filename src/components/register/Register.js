@@ -2,6 +2,7 @@ import { useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useFormValidation } from '../../utils/useFormValidation';
+import { REG_EXP_EMAIL } from '../../utils/config';
 
 
 function Register({
@@ -48,6 +49,7 @@ function Register({
               name="email"
               value={values.email || ''}
               onChange={handleChange}
+              pattern={REG_EXP_EMAIL}
               required
             />
             <span className={`register__form-input-error ${isValid.email ? "" : "register__form-input-error_active"}`}>{errorMessage.email}</span>

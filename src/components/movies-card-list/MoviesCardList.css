@@ -3,6 +3,7 @@
   border-top: 1px solid rgba(66, 66, 66, 1);
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
+  grid-template-rows: 319px;
   grid-auto-rows: 319px;
   gap: 32px 28px;
   max-width: 1280px;
@@ -49,6 +50,7 @@
 @media screen and (max-width: 890px) {
   .movies-card-list__container {
     grid-template-columns: repeat(auto-fit, 342px);
+    grid-template-rows: 309px;
     grid-auto-rows: 309px;
     gap: 35px 24px;
   }
@@ -66,6 +68,7 @@
 @media screen and (max-width: 530px) {
   .movies-card-list__container {
     grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: 272px;
     grid-auto-rows: 272px;
     padding-top: 50px;
     gap: 14px;

@@ -2,6 +2,7 @@ import { useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { useFormValidation } from '../../utils/useFormValidation';
+import { REG_EXP_EMAIL } from '../../utils/config';
 
 function Login({
   login,
@@ -35,6 +36,7 @@ function Login({
               name="email"
               value={values.email || ''}
               onChange={handleChange}
+              pattern={REG_EXP_EMAIL}
               required
             />
             <span className={`login__form-input-error ${isValid.email ? "" : "login__form-input-error_active"}`}>{errorMessage.email}</span>

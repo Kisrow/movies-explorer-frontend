@@ -5,4 +5,6 @@ module.exports = {
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   },
+  REG_EXP_EMAIL: '^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$',
+  
 }

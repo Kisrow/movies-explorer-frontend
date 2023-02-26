@@ -14,6 +14,7 @@ function MoviesCardList({
   buttonDescription,
   isErrorHappend,
   isActivePreloader,
+  isNoneSearch,
 }) {
   const location = useContext(LocationContext);
 
@@ -39,7 +40,7 @@ function MoviesCardList({
           isActivePreloader = {isActivePreloader}
         />
         <p className={`movies-card-list__error ${isErrorHappend ? "" : "movies-card-list__error_hidden"}`}>Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз</p>
-        <p className={`movies-card-list__error ${renderMovies.length === 0 && !isErrorHappend && !isActivePreloader ? "" : "movies-card-list__error_hidden"}`}>Ничего не найдено</p>
+        <p className={`movies-card-list__error ${renderMovies.length === 0 && !isErrorHappend && !isActivePreloader && !isNoneSearch ? "" : "movies-card-list__error_hidden"}`}>Ничего не найдено</p>
         {cardsMovies}
       </div>
       <button onClick={addNextRow} className={`movies-card-list__next-movies ${

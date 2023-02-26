@@ -20,5 +20,5 @@ export function useFormValidation() {
     setErrorMessage({...errorMessage, [name]: input.validationMessage });
     setValid(input.closest('form').checkValidity());
   };
-  return { values, errorMessage, isValid, formReset, handleChange };
+  return { values, errorMessage, isValid, formReset, handleChange};
 }

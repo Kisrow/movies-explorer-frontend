@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react';
 
-import { useFormValidation } from '../../utils/useFormValidation';
-
 import { CurrentUserContext } from '../../context/CurrentUserContext';
+import { useFormValidation } from '../../utils/useFormValidation';
+import { REG_EXP_EMAIL } from '../../utils/config';
 
 function Profile({
   logOut,
@@ -10,20 +10,29 @@ function Profile({
   profileErrorText,
   setProfileErrorText,
   isErrorUpdateUserDate,
+  isSuccessUpdateUserDate,
+  setErrorUpdateUserDate,
+  setSuccessUpdateUserDate,
 }) {
   const currentUser = useContext(CurrentUserContext);
-
-  const  {values, errorMessage, isValid, formReset, handleChange } = useFormValidation();
+  const  {values, errorMessage, isValid, handleChange } = useFormValidation();
+  const isValidName = values.name ? values.name === currentUser.name : values.name === undefined;
+  const isValidEmail = values.email ? values.email === currentUser.email : values.email === undefined;
 
   useEffect(() => {
-    formReset();
     setProfileErrorText('');
   }, [])
 
   function onSubmit(e) {
     e.preventDefault();
 
-    updateUserDate(values.name, values.email);
+    updateUserDate(values.name || currentUser.name, values.email || currentUser.email);
+
+    setTimeout(() => {
+      setErrorUpdateUserDate(false);
+      setSuccessUpdateUserDate(false);
+      console.log("d")
+    }, 5000);
   }
 
   return (
@@ -38,7 +47,7 @@ function Profile({
               type="text" 
               placeholder="Имя"
               name="name" 
-              value={values.name || ""}
+              defaultValue={currentUser.name || ""}
               onChange={handleChange}
               minLength="2"
               required
@@ -52,15 +61,28 @@ function Profile({
               type="email"
               placeholder="E-mail"
               name="email"
-              value={values.email || ""}
+              defaultValue={currentUser.email || ""}
               onChange={handleChange}
+              pattern={REG_EXP_EMAIL}
               required
             />
             <p className="profile__input-text">{currentUser.email}</p>
           </div>
         </fieldset>
-        <span className={`register__form-button-error ${isErrorUpdateUserDate ? "register__form-button-error_active" : ""}`}>{profileErrorText}</span>
-        <button className="profile__form-submit" type="submit" disabled={!isValid}>Редактировать</button>
+        <span className={`profile__form-button ${
+          isErrorUpdateUserDate || isSuccessUpdateUserDate ?
+          isSuccessUpdateUserDate ?
+          "profile__form-button_type_success" :
+          "profile__form-button_type_error" :
+          ""
+          }`}>{
+            isErrorUpdateUserDate || isSuccessUpdateUserDate ?
+            isErrorUpdateUserDate ?
+            profileErrorText :
+            "Данные сохранены" :
+            ""
+            }</span>
+        <button className="profile__form-submit" type="submit" disabled={!isValid || (isValidName && isValidEmail)}>Редактировать</button>
       </form>
       <button className="profile__signout" onClick={logOut}>Выйти из аккаунта</button>
     </div>

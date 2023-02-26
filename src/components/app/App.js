@@ -43,15 +43,18 @@ function App() {
   const [registerErrorText, setRegisterErrorText] = useState('');
   const [loginErrorText, setLoginErrorText] = useState('');
   const [profileErrorText, setProfileErrorText] = useState('');
-  // ошибки при запросах
+  // при запросах
   const [isErrorGetMovies, setErrorGetMovies] = useState(false);
   const [isErrorGetSavedMovies, setErrorGetSavedMovies] = useState(false);
   const [isErrorUpdateUserDate, setErrorUpdateUserDate] = useState(false);
+  const [isSuccessUpdateUserDate, setSuccessUpdateUserDate] = useState(false);
   const [isErrorSearchForm, setErrorSearchForm] = useState(false);
   // прелоадер
   const [isActivePreloader, setActivePreloader] = useState(false);
+  const [isNoneSearch, setNoneSearch] = useState(true);
 
   useEffect(() => {
+    setNoneSearch(true);
     setActivePreloader(true);
     getAllSavedMovies();
     getInfoCurrentUser();
@@ -63,6 +66,7 @@ function App() {
         if (sessionStorage.getItem("lastSearchMovieName")) {
           setSearchMovieName(sessionStorage.getItem("lastSearchMovieName"));
           setRenderMovies(filterByMovieName(filterByCheckbox(moviesFromAdditionalServer, sessionStorage.getItem('checkbox') === 'true' ? true : false), sessionStorage.getItem("lastSearchMovieName").toLowerCase()));
+          setNoneSearch(false);
           }
         })
         .then(()=> {
@@ -79,7 +83,7 @@ function App() {
     savedMoviesApi.register(name, email, password)
       .then((data) => {
         if (data) {
-          history.push('/login');
+          login(email, password);
         }
       })
       .catch((err) => {
@@ -156,11 +160,13 @@ function App() {
     savedMoviesApi.updateUserDate(name, email)
       .then((date) => {
         setErrorUpdateUserDate(false);
+        setSuccessUpdateUserDate(true);
         setCurrentUser(date);
       })
       .catch((err) => {
         setProfileErrorText(err.message);
         setErrorUpdateUserDate(true);
+        setSuccessUpdateUserDate(false);
       })
   };
 
@@ -195,6 +201,7 @@ function App() {
         setErrorSearchForm(false);
         setRenderMovies(filterByMovieName(filterByCheckbox(movies, isChecked), searchMovieName.toLowerCase()));
         sessionStorage.setItem('lastSearchMovieName', searchMovieName);
+        setNoneSearch(false);
       } else {
         setErrorSearchForm(true);
       }
@@ -233,18 +240,22 @@ function App() {
                 <Main />
               </Route>
               <Route path="/register">
+              {!logedIn ?
                 <Register 
                   register = {register}
                   registerErrorText = {registerErrorText}
                   setRegisterErrorText = {setRegisterErrorText}
-                />
+                /> : <Redirect to="/"
+              />}
               </Route>
               <Route path="/login">
+              {!logedIn ?
                 <Login 
                   login = {login}
                   loginErrorText = {loginErrorText}
                   setLoginErrorText = {setLoginErrorText}
-                />
+                /> : <Redirect to="/"
+              />}
               </Route>
               <ProtectedRoute
                 path="/movies"
@@ -262,6 +273,7 @@ function App() {
                 isErrorGetMovies = {isErrorGetMovies}
                 isErrorSearchForm = {isErrorSearchForm}
                 isActivePreloader = {isActivePreloader}
+                isNoneSearch = {isNoneSearch}
               />
               <ProtectedRoute
                 path="/saved-movies"
@@ -286,11 +298,13 @@ function App() {
                 profileErrorText = {profileErrorText}
                 setProfileErrorText = {setProfileErrorText}
                 isErrorUpdateUserDate = {isErrorUpdateUserDate}
+                isSuccessUpdateUserDate = {isSuccessUpdateUserDate}
+                setErrorUpdateUserDate = {setErrorUpdateUserDate}
+                setSuccessUpdateUserDate = {setSuccessUpdateUserDate}
               />
               <Route path="/not-found">
                 <PageNotFound />
               </Route>
-
               <Route path="*">
                 {logedIn ? <Redirect to="not-found" /> : <Redirect to="/" />}
               </Route>

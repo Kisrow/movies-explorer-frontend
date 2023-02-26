@@ -17,6 +17,7 @@ function Movies({
   isErrorGetMovies,
   isErrorSearchForm,
   isActivePreloader,
+  isNoneSearch,
 }) {
   const [renderMoviesVisibleRows, setRenderMoviesVisibleRows] = useState([]);
   const [isButtonNextMoviesActive, setButtonNextMoviesActive] = useState(true);
@@ -73,7 +74,7 @@ function Movies({
   };
 
   function addNextRowDef(countAddMovies) {
-    if (renderMovies.length - renderMoviesVisibleRows.length >= countAddMovies) {
+    if (renderMovies.length - renderMoviesVisibleRows.length > countAddMovies) {
       setRenderMoviesVisibleRows(renderMoviesVisibleRows.concat(renderMovies.slice(renderMoviesVisibleRows.length, renderMoviesVisibleRows.length + countAddMovies)));
     } else {
       setRenderMoviesVisibleRows(renderMoviesVisibleRows.concat(renderMovies.slice(renderMoviesVisibleRows.length, renderMovies.length)));
@@ -101,6 +102,7 @@ function Movies({
         buttonDescription = "Сохранить"
         isErrorHappend = {isErrorGetMovies}
         isActivePreloader = {isActivePreloader}
+        isNoneSearch = {isNoneSearch}
       />
     </section>
   );
